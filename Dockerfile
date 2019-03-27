@@ -28,7 +28,7 @@ RUN \
 	perl-net-ssleay \
 	perl-xml-libxml \
 	python \
-	python-pip \
+	py-pip \
 	php7 \
 	php7-cgi \
 	php7-fpm \
@@ -51,7 +51,6 @@ RUN \
  # install build packages
  apk add --no-cache --virtual=build-dependencies \
         make && \
- pip install --upgrade pip && \
  # End Added
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
