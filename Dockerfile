@@ -27,8 +27,7 @@ RUN \
 	perl-json \
 	perl-net-ssleay \
 	perl-xml-libxml \
-	python \
-	python-pip \
+	python3 \
 	php7 \
 	php7-cgi \
 	php7-fpm \
@@ -55,7 +54,7 @@ RUN \
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
  echo "**** setup python pip dependencies ****" && \
- python -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
+ python3 -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
  echo "**** install webui ****" && \
  mkdir -p \
 	/usr/share/webapps/rutorrent \
