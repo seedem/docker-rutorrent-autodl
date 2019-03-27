@@ -51,7 +51,7 @@ RUN \
  # install build packages
  apk add --no-cache --virtual=build-dependencies \
         make && \
-Rpip install --upgrade pip && \
+ pip install --upgrade pip && \
  # End Added
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
