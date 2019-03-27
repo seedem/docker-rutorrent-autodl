@@ -46,6 +46,11 @@ RUN \
 	zlib \
 	zip \
 	xz && \
+ # Begin Added
+ # install build packages
+ apk add --no-cache --virtual=build-dependencies \
+        make && \
+ # End Added
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
  echo "**** setup python pip dependencies ****" && \
