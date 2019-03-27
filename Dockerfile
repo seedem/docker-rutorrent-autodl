@@ -28,6 +28,7 @@ RUN \
 	perl-net-ssleay \
 	perl-xml-libxml \
 	python \
+	python-pip \
 	php7 \
 	php7-cgi \
 	php7-fpm \
