@@ -5,7 +5,7 @@ mkdir -p \
 	/config{/log/nginx,/log/rtorrent,/log/rutorrent,/nginx,/php,/rtorrent/rtorrent_sess,/rutorrent/settings/users} \
 	/config/rutorrent/profiles{/settings,/torrents,/users,/tmp} \
 	/config/themes \
-	/downloads{/completed,/incoming,/watched} \
+	/mnt{/completed,/incoming,/watched} \
 	/run{/nginx,/php} \
 	/var/lib/nginx/tmp/client_body \
 	/var/tmp/nginx
@@ -51,8 +51,8 @@ ln -s /config/themes /usr/share/webapps/rutorrent/plugins/theme/themes
 
 # permissions
 chown abc:abc \
-	/downloads \
-	/downloads{/completed,/incoming,/watched}
+	/mnt \
+	/mnt{/completed,/incoming,/watched}
 
 chown -R abc:abc \
 	/config \
