@@ -9,6 +9,7 @@ COPY patches/ /defaults/patches/
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
+	bash-completion \
 	ca-certificates \
 	curl \
 	fcgi \
@@ -30,6 +31,7 @@ RUN \
 	python \
 	py-pip \
 	findutils \
+        binutils \
 	php7 \
 	php7-cgi \
 	php7-fpm \
@@ -46,6 +48,9 @@ RUN \
 	wget \
 	git \
 	zlib \
+        zlib-dev \
+        libxml2-dev \
+        libressl \
 	zip \
 	xz && \
  # Begin Added
