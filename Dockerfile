@@ -14,6 +14,7 @@ RUN \
 	binutils \
 	zlib-dev \
 	libxml2-dev \
+        libressl \
 	ca-certificates \
 	curl \
 	fcgi \
