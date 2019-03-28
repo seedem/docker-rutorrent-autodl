@@ -29,6 +29,7 @@ RUN \
 	perl-xml-libxml \
 	python \
 	py-pip \
+	findutils \
 	php7 \
 	php7-cgi \
 	php7-fpm \
