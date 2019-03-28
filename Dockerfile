@@ -9,6 +9,11 @@ COPY patches/ /defaults/patches/
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
+ 	python-dev \
+	bash-completion \
+	binutils \
+	zlib-dev \
+	libxml2-dev \
 	ca-certificates \
 	curl \
 	fcgi \
