@@ -1,5 +1,4 @@
 #!/bin/sh
-echo "[Begin Cron Imports...]" >> /dev/stdout
 [[ ! -d /config/cron/15min ]] && /bin/mkdir -p /config/cron/15min
 [[ ! -d /config/cron/hourly ]] && /bin/mkdir -p /config/cron/hourly
 [[ ! -d /config/cron/daily ]] && /bin/mkdir -p /config/cron/daily
@@ -20,9 +19,8 @@ echo "[Begin Cron Imports...]" >> /dev/stdout
 [[ -d /config/cron/weekly ]] && /bin/cp -R /config/cron/weekly/. /etc/periodic/weekly/
 [[ -d /config/cron/monthly ]] && /bin/cp -R /config/cron/monthly/. /etc/periodic/monthly/
 
-/bin/chmod +x /etc/periodic/15min/.
-/bin/chmod +x /etc/periodic/hourly/.
-/bin/chmod +x /etc/periodic/daily/.
-/bin/chmod +x /etc/periodic/weekly/.
-/bin/chmod +x /etc/periodic/monthly/.
-echo "[Finished Cron Imports.]" >> /dev/stdout
+/bin/chmod a+x /etc/periodic/15min/.
+/bin/chmod a+x /etc/periodic/hourly/.
+/bin/chmod a+x /etc/periodic/daily/.
+/bin/chmod a+x /etc/periodic/weekly/.
+/bin/chmod a+x /etc/periodic/monthly/.
