@@ -18,7 +18,6 @@ RUN \
 	zlib-dev \
 	libxml2-dev \
         libressl \
-	bzip2 \
 	ca-certificates \
 	curl \
 	fcgi \
@@ -119,7 +118,7 @@ RUN \
  #cd .. && \
  #rm -rf rar* && \
  #End Install Rar
- #apk add --no-cache unzip bzip2 && \
+ apk add --no-cache unzip bzip2 && \
  cd /usr/share/webapps/rutorrent/plugins/ && \
  git clone https://github.com/Gyran/rutorrent-pausewebui pausewebui && \
  git clone https://github.com/Gyran/rutorrent-ratiocolor ratiocolor && \
