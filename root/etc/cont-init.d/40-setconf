@@ -17,9 +17,8 @@ mkdir -p /config/tmp /detach_sess
 [[ ! -L /usr/local/bin/curl ]] && ln -s /usr/bin/curl /usr/local/bin/curl
 
 # Link crontabs to home
-mkdir -p /home/abc/cron
-ln -s /etc/periodic /home/abc/cron
-chown -R abc:abc /home/abc/cron
+mkdir -p /config/cron
+ln -s /etc/periodic/ /config/cron
 
 # set perms
 chown -R abc:abc \
