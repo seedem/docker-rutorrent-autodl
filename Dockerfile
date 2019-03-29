@@ -9,7 +9,7 @@ COPY patches/ /defaults/patches/
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
- 	build-essential \
+ 	build-base \
  	python-dev \
 	bash-completion \
 	binutils \
