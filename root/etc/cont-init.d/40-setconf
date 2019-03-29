@@ -19,6 +19,7 @@ mkdir -p /config/tmp /detach_sess
 # Link crontabs to home
 [[ ! -d /config/cron ]] && mkdir -p /config/cron
 [[ -f /config/cron/tidy ]] && cp /config/cron/tidy /etc/periodic/15min/tidy
+[[ -f /etc/periodic/15min/tidy ]] && chmod +x /etc/periodic/15min/tidy
 
 # set perms
 chown -R abc:abc \
