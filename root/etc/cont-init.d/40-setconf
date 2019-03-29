@@ -19,8 +19,8 @@ mkdir -p /config/tmp /detach_sess
 # Link crontabs to home
 mkdir -p /config/cron
 ln -s /etc/periodic/ /config/cron
-chown =R abc:abc /config/cron
-
+chown -R abc:abc /config/cron
+chmod -R 755 /config/cron
 
 # set perms
 chown -R abc:abc \
