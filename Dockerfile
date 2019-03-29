@@ -18,6 +18,7 @@ RUN \
 	zlib-dev \
 	libxml2-dev \
         libressl \
+	rar \
 	ca-certificates \
 	curl \
 	fcgi \
