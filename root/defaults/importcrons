@@ -20,9 +20,9 @@ cp /defaults/importcrons /etc/periodic/15min/importcrons
 [[ -d /config/cron/weekly ]] && cp -R /config/cron/weekly/. /etc/periodic/weekly/
 [[ -d /config/cron/monthly ]] && cp -R /config/cron/monthly/. /etc/periodic/monthly/
 
-chmod +x /etc/periodic/15min/*
-chmod +x /etc/periodic/hourly/*
-chmod +x /etc/periodic/daily/*
-chmod +x /etc/periodic/weekly/*
-chmod +x /etc/periodic/monthly/*
+chmod +x /etc/periodic/15min/.
+chmod +x /etc/periodic/hourly/.
+chmod +x /etc/periodic/daily/.
+chmod +x /etc/periodic/weekly/.
+chmod +x /etc/periodic/monthly/.
 echo "[Finished Cron Imports.]" >> /dev/stdout
