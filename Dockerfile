@@ -10,6 +10,7 @@ RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
  	build-base \
+	py-psutil \
  	python-dev \
 	bash-completion \
 	binutils \
