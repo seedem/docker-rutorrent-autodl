@@ -134,6 +134,8 @@ RUN \
 	/etc/nginx/conf.d/default.conf \
 	/tmp/*
 
+RUN chmod +x /usr/local/bin/rar
+
 # add local files
 COPY root/ /
 
