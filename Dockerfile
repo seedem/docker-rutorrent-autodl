@@ -18,6 +18,7 @@ RUN \
 	zlib-dev \
 	libxml2-dev \
         libressl \
+	bzip2 \
 	ca-certificates \
 	curl \
 	fcgi \
@@ -110,15 +111,15 @@ RUN \
  cd .. && \
  rm -rf plowshare* && \
  #Install Rar for filemanager
- wget http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz && \
- tar -xzvf rarlinux-5.4.0.tar.gz && \
- cd rar/ && \
- make && \
+ #wget http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz && \
+ #tar -xzvf rarlinux-5.4.0.tar.gz && \
+ #cd rar/ && \
+ #make && \
  #mv rar_static /usr/bin/rar && \
- cd .. && \
- rm -rf rar* && \
+ #cd .. && \
+ #rm -rf rar* && \
  #End Install Rar
- apk add --no-cache unzip bzip2 && \
+ #apk add --no-cache unzip bzip2 && \
  cd /usr/share/webapps/rutorrent/plugins/ && \
  git clone https://github.com/Gyran/rutorrent-pausewebui pausewebui && \
  git clone https://github.com/Gyran/rutorrent-ratiocolor ratiocolor && \
@@ -133,8 +134,6 @@ RUN \
  rm -rf \
 	/etc/nginx/conf.d/default.conf \
 	/tmp/*
-
-RUN chmod +x /usr/local/bin/rar
 
 # add local files
 COPY root/ /
