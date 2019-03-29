@@ -61,11 +61,11 @@ cp /defaults/importcrons /etc/periodic/15min/importcrons
 [[ -d /config/cron/daily ]] && cp -R /config/cron/daily/. /etc/periodic/daily/
 [[ -d /config/cron/weekly ]] && cp -R /config/cron/weekly/. /etc/periodic/weekly/
 [[ -d /config/cron/monthly ]] && cp -R /config/cron/monthly/. /etc/periodic/monthly/
-/usr/bin/find /etc/periodic/15min/ -type f -exec /bin/chmod a+x {} \;
-/usr/bin/find /etc/periodic/hourly/ -type f -exec /bin/chmod a+x {} \;
-/usr/bin/find /etc/periodic/daily/ -type f -exec /bin/chmod a+x {} \;
-/usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/chmod a+x {} \;
-/usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/chmod a+x {} \;
+find /etc/periodic/15min/ -type f -exec chmod a+x {} \;
+find /etc/periodic/hourly/ -type f -exec chmod a+x {} \;
+find /etc/periodic/daily/ -type f -exec chmod a+x {} \;
+find /etc/periodic/weekly/ -type f -exec chmod a+x {} \;
+find /etc/periodic/monthly/ -type f -exec chmod a+x {} \;
 # End crontab import
 
 # permissions
