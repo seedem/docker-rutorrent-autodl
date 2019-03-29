@@ -19,8 +19,8 @@
 [[ -d /config/cron/weekly ]] && /bin/cp -R /config/cron/weekly/. /etc/periodic/weekly/
 [[ -d /config/cron/monthly ]] && /bin/cp -R /config/cron/monthly/. /etc/periodic/monthly/
 
-/bin/chmod a+x /etc/periodic/15min/.
-/bin/chmod a+x /etc/periodic/hourly/.
-/bin/chmod a+x /etc/periodic/daily/.
-/bin/chmod a+x /etc/periodic/weekly/.
-/bin/chmod a+x /etc/periodic/monthly/.
+/usr/bin/find /etc/periodic/15min/ -type f -exec /bin/chmod a+x {} \;
+/usr/bin/find /etc/periodic/hourly/ -type f -exec /bin/chmod a+x {} \;
+/usr/bin/find /etc/periodic/daily/ -type f -exec /bin/chmod a+x {} \;
+/usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/chmod a+x {} \;
+/usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/chmod a+x {} \;
