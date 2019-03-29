@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "[Starting cron import...]" >> /dev/stdout
 [[ ! -d /config/cron/15min ]] && /bin/mkdir -p /config/cron/15min
 [[ ! -d /config/cron/hourly ]] && /bin/mkdir -p /config/cron/hourly
 [[ ! -d /config/cron/daily ]] && /bin/mkdir -p /config/cron/daily
@@ -24,3 +25,4 @@
 /usr/bin/find /etc/periodic/daily/ -type f -exec /bin/chmod a+x {} \;
 /usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/chmod a+x {} \;
 /usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/chmod a+x {} \;
+echo "[Completed crom import.]" >> /dev/stdout
