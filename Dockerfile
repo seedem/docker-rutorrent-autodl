@@ -114,7 +114,7 @@ RUN \
  tar -xzvf rarlinux-5.4.0.tar.gz && \
  cd rar/ && \
  make && \
- mv rar_static /usr/bin/rar
+ mv rar_static /usr/bin/rar && \
  cd .. && \
  rm -rf rar* && \
  #End Install Rar
