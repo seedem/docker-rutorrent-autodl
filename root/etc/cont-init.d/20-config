@@ -50,9 +50,9 @@ rm -rf /usr/share/webapps/rutorrent/plugins/theme/themes
 ln -s /config/themes /usr/share/webapps/rutorrent/plugins/theme/themes
 
 # Link crontabs to home
-[[ ! -e ~/config ]] && mkdir ~/cron
-ln -s /etc/periodic ~/config
-chown -R ~/config
+[[ ! -e /home/abc/cron ]] && mkdir /home/abc/cron
+ln -s /etc/periodic /home/abc/cron
+chown -R /home/abc/cron
 
 # permissions
 chown abc:abc \
