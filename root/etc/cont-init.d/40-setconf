@@ -16,6 +16,11 @@ mkdir -p /config/tmp /detach_sess
 # Symlink previous manual `curl` install
 [[ ! -L /usr/local/bin/curl ]] && ln -s /usr/bin/curl /usr/local/bin/curl
 
+# Link crontabs to home
+mkdir -p /home/abc/cron
+ln -s /etc/periodic /home/abc/cron
+chown -R abc:abc /home/abc/cron
+
 # set perms
 chown -R abc:abc \
 	/config \
