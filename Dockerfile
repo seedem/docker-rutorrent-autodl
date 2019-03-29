@@ -9,6 +9,7 @@ COPY patches/ /defaults/patches/
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
+ 	linux-headers \
  	build-base \
 	py-psutil \
  	python-dev \
