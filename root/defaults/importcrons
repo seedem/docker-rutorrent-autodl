@@ -6,11 +6,16 @@ echo "[Starting cron import...]" >> /dev/stdout
 [[ ! -d /config/cron/weekly ]] && /bin/mkdir -p /config/cron/weekly
 [[ ! -d /config/cron/monthly ]] && /bin/mkdir -p /config/cron/monthly
 
-/bin/rm -rf /etc/periodic/15min/{*,.*}
-/bin/rm -rf /etc/periodic/hourly/{*,.*}
-/bin/rm -rf /etc/periodic/daily/{*,.*}
-/bin/rm -rf /etc/periodic/weekly/{*,.*}
-/bin/rm -rf /etc/periodic/monthly/{*,.*}
+#/bin/rm -rf /etc/periodic/15min/{*,.*}
+#/bin/rm -rf /etc/periodic/hourly/{*,.*}
+#/bin/rm -rf /etc/periodic/daily/{*,.*}
+#/bin/rm -rf /etc/periodic/weekly/{*,.*}
+#/bin/rm -rf /etc/periodic/monthly/{*,.*}
+/usr/bin/find /etc/periodic/15min/ -type f -exec /bin/rm {} \;
+/usr/bin/find /etc/periodic/hourly/ -type f -exec /bin/rm {} \;
+/usr/bin/find /etc/periodic/daily/ -type f -exec /bin/rm {} \;
+/usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/rm {} \;
+/usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/rm {} \;
 
 /bin/cp /defaults/importcrons /etc/periodic/15min/1
 [[ -f /config/cron/15min/1 ]] && /bin/mv /config/cron/15min/1 /config/cron/15min/1a
