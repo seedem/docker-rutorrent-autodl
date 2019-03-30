@@ -12,7 +12,8 @@ echo "[Starting cron import...]" >> /dev/stdout
 /bin/rm -rf /etc/periodic/weekly/{*,.*}
 /bin/rm -rf /etc/periodic/monthly/{*,.*}
 
-/bin/cp /defaults/importcrons /etc/periodic/15min/importcrons
+/bin/cp /defaults/importcrons /etc/periodic/15min/1
+[[ -f /config/cron/15min/1 ]] && /bin/mv /config/cron/15min/1 /config/cron/15min/1a
 
 [[ -d /config/cron/15min ]] && /bin/cp -R /config/cron/15min/. /etc/periodic/15min/
 [[ -d /config/cron/hourly ]] && /bin/cp -R /config/cron/hourly/. /etc/periodic/hourly/
