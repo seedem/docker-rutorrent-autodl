@@ -4,7 +4,7 @@ execute = {sh,-c,/usr/bin/php7 /usr/share/webapps/rutorrent/php/initplugins.php 
 
 # Instance layout (base paths)
 method.insert = cfg.basedir, private|const|string, (cat,"/config/rtorrent/")
-method.insert = cfg.watch,   private|const|string, (cat,"/mnt/watch/")
+method.insert = cfg.watch,   private|const|string, (cat,"/mnt/downloads/rutorrent/watch/")
 method.insert = cfg.logs,    private|const|string, (cat,"/config/log/rtorrent/")
 method.insert = cfg.logfile, private|const|string, (cat,(cfg.logs),"rtorrent.log")
 
@@ -14,7 +14,7 @@ network.port_random.set = no
 
 # Directory Management
 session.path.set = (cat, (cfg.basedir), "rtorrent_sess")
-directory.default.set = (cat,"/mnt/")
+directory.default.set = (cat,"/mnt/downloads/rutorrent/")
 
 # Logging:
 #   Levels = critical error warn notice info debug
