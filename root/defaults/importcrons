@@ -12,14 +12,13 @@ echo "[Starting cron import...]" >> /dev/stdout
 /usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/rm {} \;
 /usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/rm {} \;
 
-/bin/cp /defaults/importcrons /etc/periodic/15min/1
-[[ -f /config/cron/15min/1 ]] && /bin/mv /config/cron/15min/1 /config/cron/15min/1a
-
+[[ -f /config/cron/15min/1 ]] && /bin/mv /config/cron/15min/zzz99zzz /config/cron/15min/zzz99zzz1
 [[ -d /config/cron/15min ]] && /bin/cp -R /config/cron/15min/. /etc/periodic/15min/
 [[ -d /config/cron/hourly ]] && /bin/cp -R /config/cron/hourly/. /etc/periodic/hourly/
 [[ -d /config/cron/daily ]] && /bin/cp -R /config/cron/daily/. /etc/periodic/daily/
 [[ -d /config/cron/weekly ]] && /bin/cp -R /config/cron/weekly/. /etc/periodic/weekly/
 [[ -d /config/cron/monthly ]] && /bin/cp -R /config/cron/monthly/. /etc/periodic/monthly/
+/bin/cp /defaults/importcrons /etc/periodic/15min/zzz99zzz
 
 /usr/bin/find /etc/periodic/15min/ -type f -exec /bin/chmod a+x {} \;
 /usr/bin/find /etc/periodic/hourly/ -type f -exec /bin/chmod a+x {} \;
