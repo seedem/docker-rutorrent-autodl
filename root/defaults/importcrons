@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "[Waiting to start cron import...]" >> /dev/stdout
+sleep 10s
 echo "[Starting cron import...]" >> /dev/stdout
 [[ ! -d /config/cron/15min ]] && /bin/mkdir -p /config/cron/15min
 [[ ! -d /config/cron/hourly ]] && /bin/mkdir -p /config/cron/hourly
