@@ -126,6 +126,7 @@ RUN \
  git clone https://github.com/Gyran/rutorrent-instantsearch instantsearch && \
  #git clone https://github.com/xombiemp/rutorrentMobile && \
  git clone https://github.com/dioltas/AddZip && \
+ mv AddZipp addzip && \
  # End added
  echo "**** fix logrotate ****" && \
  sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf && \
