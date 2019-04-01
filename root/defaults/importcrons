@@ -27,4 +27,4 @@ echo "[Starting cron import...]" >> /dev/stdout
 /usr/bin/find /etc/periodic/daily/ -type f -exec /bin/chmod a+x {} \;
 /usr/bin/find /etc/periodic/weekly/ -type f -exec /bin/chmod a+x {} \;
 /usr/bin/find /etc/periodic/monthly/ -type f -exec /bin/chmod a+x {} \;
-echo "[Completed crom import.]" >> /dev/stdout
+echo "[Completed cron import.]" >> /dev/stdout
