@@ -74,7 +74,7 @@ pieces.hash.on_completion.set = no
 trackers.use_udp.set = yes
 
 # Whether to allocate disk space for a new torrent. Default: `0`
-system.file.allocate.set = 1
+system.file.allocate.set = 0
 
 # Preloading a piece of a file. Default: `0` Possible values: `0` (Off) , `1` (Madvise) , `2` (Direct paging).
 pieces.preload.type.set = 2
