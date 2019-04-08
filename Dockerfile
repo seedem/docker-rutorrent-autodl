@@ -124,7 +124,7 @@ RUN \
  git clone https://github.com/Gyran/rutorrent-ratiocolor ratiocolor && \
  sed -i 's/changeWhat = "cell-background";/changeWhat = "font";/g' /usr/share/webapps/rutorrent/plugins/ratiocolor/init.js && \
  git clone https://github.com/Gyran/rutorrent-instantsearch instantsearch && \
- git clone https://github.com/xombiemp/rutorrentMobile && \
+ git clone https://github.com/xombiemp/rutorrentMobile mobile && \
  git clone https://github.com/dioltas/AddZip && \
  mv AddZip addzip && \
  # End added
