@@ -9,6 +9,17 @@ COPY patches/ /defaults/patches/
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache -U \
+ #deluge
+ 	deluged \
+	deluge-console \
+	deluge-web \
+	libssl1.0
+	p7zip
+	openssl
+	libssl-dev
+	openssl-dev
+	libffi-dev
+#End deluge
  	linux-headers \
  	build-base \
 	py-psutil \
@@ -62,6 +73,24 @@ RUN \
  apk add --no-cache --virtual=build-dependencies \
         make && \
  # End Added
+ #Begin deluge pip
+ echo "**** install pip packages ****" && \
+ pip install --no-cache-dir -U \
+	incremental \
+	crypto \
+	mako \
+	markupsafe \
+	pyopenssl \
+	service_identity \
+	six \
+	twisted \
+	zope.interface && \
+ apt-get purge -y \
+	libssl-dev \
+	libffi-dev \
+ apt-get --purge autoremove -y && \
+ apt-get clean && \
+ #End deluge pip
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
  echo "**** setup python pip dependencies ****" && \
@@ -142,5 +171,6 @@ ENV \
   S6_KILL_GRACETIME=30000
 
 # ports and volumes
-EXPOSE 80
+#Added 8112 58846 58946 58946/udp
+EXPOSE 80 8112 58846 58946 58946/udp
 VOLUME /config /mnt
