@@ -8,7 +8,7 @@ COPY patches/ /defaults/patches/
 # install packages
 RUN \
  echo "**** install packages ****" && \
- apk update && \
+ apk update -y && \
  apk add --no-cache -U \
  #deluge
  	deluged \
