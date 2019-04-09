@@ -11,10 +11,7 @@ RUN \
  apk update -y && \
  apk add --no-cache -U \
  #deluge
- 	deluged \
-	deluge-console \
-	deluge-web \
-	libssl1.0 \
+ 	deluge \
 	p7zip \
 	openssl \
 	libssl-dev \
