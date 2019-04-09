@@ -8,13 +8,14 @@ COPY patches/ /defaults/patches/
 # install packages
 RUN \
  echo "**** install packages ****" && \
+ apk update && \
  apk add --no-cache -U \
  #deluge
  	deluged \
 	deluge-console \
 	deluge-web \
 	libssl1.0 \
-#	p7zip \
+	p7zip \
 	openssl \
 	libssl-dev \
 	openssl-dev \
