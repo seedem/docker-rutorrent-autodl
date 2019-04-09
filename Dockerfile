@@ -13,12 +13,12 @@ RUN \
  	deluged \
 	deluge-console \
 	deluge-web \
-	libssl1.0
-	p7zip
-	openssl
-	libssl-dev
-	openssl-dev
-	libffi-dev
+	libssl1.0 \
+	p7zip \
+	openssl \
+	libssl-dev \
+	openssl-dev \
+	libffi-dev \
 #End deluge
  	linux-headers \
  	build-base \
