@@ -14,7 +14,7 @@ RUN \
 	deluge-console \
 	deluge-web \
 	libssl1.0 \
-	p7zip \
+#	p7zip \
 	openssl \
 	libssl-dev \
 	openssl-dev \
