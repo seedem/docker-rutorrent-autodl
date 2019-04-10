@@ -16,12 +16,12 @@ apk upgrade --no-cache && \
 #end deluge
 apk add --no-cache -U \
 #deluge
- 	deluge@testing \
 	libressl2.7-libcrypto@testing \
 	boost-dev@testing \
 	libssl1.1@testing \
 	py-constantly@testing \
 	py-incremental@testing \
+	deluge@testing \
 #End deluge
  	linux-headers \
  	build-base \
