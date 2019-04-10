@@ -76,7 +76,7 @@ apk add --no-cache -U \
  echo "**** setup python pip dependencies ****" && \
  python -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
  #Begin deluge pip
- pip install automat constantly incremental service_identity && \
+ python -m pip install automat constantly incremental service_identity && \
  #End deluge pip
  echo "**** install webui ****" && \
  mkdir -p \
