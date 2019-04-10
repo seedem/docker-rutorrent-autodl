@@ -7,17 +7,16 @@ COPY patches/ /defaults/patches/
 
 # install packages
 RUN \
- echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
- echo "**** install packages ****" && \
- apk update && \
- apk add --no-cache -U \
- #deluge
+#deluge
+echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+#end deluge
+echo "**** install packages ****" && \
+#deluge
+apk upgrade --no-cache && \
+#end deluge
+apk add --no-cache -U \
+#deluge
  	deluge@testing \
-	p7zip \
-	openssl \
-	libssl-dev \
-	openssl-dev \
-	libffi-dev \
 #End deluge
  	linux-headers \
  	build-base \
@@ -72,28 +71,13 @@ RUN \
  apk add --no-cache --virtual=build-dependencies \
         make && \
  # End Added
- #Begin deluge pip
- echo "**** install pip packages ****" && \
- pip install --no-cache-dir -U \
-	incremental \
-	crypto \
-	mako \
-	markupsafe \
-	pyopenssl \
-	service_identity \
-	six \
-	twisted \
-	zope.interface && \
- apt-get purge -y \
-	libssl-dev \
-	libffi-dev \
- apt-get --purge autoremove -y && \
- apt-get clean && \
- #End deluge pip
  apk add --no-cache -U --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	perl-json-xs && \
  echo "**** setup python pip dependencies ****" && \
  python -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
+ #Begin deluge pip
+ pip install service_identity attr && \
+ #End deluge pip
  echo "**** install webui ****" && \
  mkdir -p \
 	/usr/share/webapps/rutorrent \
