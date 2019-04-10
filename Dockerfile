@@ -12,7 +12,7 @@ RUN \
  apk update && \
  apk add --no-cache -U \
  #deluge
- 	deluge \
+ 	deluge@testing \
 	p7zip \
 	openssl \
 	libssl-dev \
