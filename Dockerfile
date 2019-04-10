@@ -8,20 +8,20 @@ COPY patches/ /defaults/patches/
 # install packages
 RUN \
 #deluge
-echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+#echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
 #end deluge
 echo "**** install packages ****" && \
 #deluge
-apk upgrade --no-cache && \
+#apk upgrade --no-cache && \
 #end deluge
 apk add --no-cache -U \
 #deluge
-	libressl2.7-libcrypto@testing \
-	boost-dev@testing \
-	libssl1.1@testing \
-	py-constantly@testing \
-	py-incremental@testing \
-	deluge@testing \
+#	libressl2.7-libcrypto@testing \
+#	boost-dev@testing \
+#	libssl1.1@testing \
+#	py-constantly@testing \
+#	py-incremental@testing \
+#	deluge@testing \
 #End deluge
  	linux-headers \
  	build-base \
@@ -81,7 +81,7 @@ apk add --no-cache -U \
  echo "**** setup python pip dependencies ****" && \
  python -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
  #Begin deluge pip
- python -m pip install automat constantly incremental service_identity && \
+ #python -m pip install automat constantly incremental service_identity && \
  #End deluge pip
  echo "**** install webui ****" && \
  mkdir -p \
