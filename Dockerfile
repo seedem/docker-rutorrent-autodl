@@ -7,8 +7,9 @@ COPY patches/ /defaults/patches/
 
 # install packages
 RUN \
+ echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
  echo "**** install packages ****" && \
- apk update -y && \
+ apk update && \
  apk add --no-cache -U \
  #deluge
  	deluge \
