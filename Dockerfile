@@ -7,22 +7,8 @@ COPY patches/ /defaults/patches/
 
 # install packages
 RUN \
-#deluge
-#echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-#end deluge
 echo "**** install packages ****" && \
-#deluge
-#apk upgrade --no-cache && \
-#end deluge
 apk add --no-cache -U \
-#deluge
-#	libressl2.7-libcrypto@testing \
-#	boost-dev@testing \
-#	libssl1.1@testing \
-#	py-constantly@testing \
-#	py-incremental@testing \
-#	deluge@testing \
-#End deluge
  	linux-headers \
  	build-base \
 	py-psutil \
@@ -80,9 +66,6 @@ apk add --no-cache -U \
 	perl-json-xs && \
  echo "**** setup python pip dependencies ****" && \
  python -m pip install --no-cache-dir -U pip setuptools requests urllib3 && \
- #Begin deluge pip
- #python -m pip install automat constantly incremental service_identity && \
- #End deluge pip
  echo "**** install webui ****" && \
  mkdir -p \
 	/usr/share/webapps/rutorrent \
@@ -126,15 +109,6 @@ apk add --no-cache -U \
  make install && \
  cd .. && \
  rm -rf plowshare* && \
- #Install Rar for filemanager
- #wget http://www.rarlab.com/rar/rarlinux-5.4.0.tar.gz && \
- #tar -xzvf rarlinux-5.4.0.tar.gz && \
- #cd rar/ && \
- #make && \
- #mv rar_static /usr/bin/rar && \
- #cd .. && \
- #rm -rf rar* && \
- #End Install Rar
  apk add --no-cache unzip bzip2 && \
  cd /usr/share/webapps/rutorrent/plugins/ && \
  git clone https://github.com/Gyran/rutorrent-pausewebui pausewebui && \
@@ -159,6 +133,5 @@ ENV \
   S6_KILL_GRACETIME=30000
 
 # ports and volumes
-#Added 8112 58846 58946 58946/udp
-EXPOSE 80 8112 58846 58946 58946/udp
+EXPOSE 80
 VOLUME /config /mnt
